@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: otp
+  data:
+    mongodb:
+      uri: ${DB_URI}
+  threads:
+    virtual:
+      enabled: true
+  jackson:
+    parser:
+      ignore-undefined: true
+      allow-missing-values: true
+    mapper:
+      accept-case-insensitive-enums: true
+      accept-case-insensitive-properties: true
+    default-property-inclusion: non_null
+    serialization:
+      write-enums-using-to-string: true
+
+server:
+  tomcat:
+    threads:
+      max: 6
+
+logging:
+  level:
+    root: info
+    web: debug
